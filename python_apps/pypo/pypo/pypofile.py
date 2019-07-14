@@ -17,7 +17,7 @@ import json
 import hashlib
 from requests.exceptions import ConnectionError, HTTPError, Timeout
 
-CONFIG_PATH = '/etc/airtime/airtime.conf'
+CONFIG_PATH = '/etc/libretime/libretime.conf'
 
 logging.captureWarnings(True)
 

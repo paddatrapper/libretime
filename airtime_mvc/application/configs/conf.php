@@ -1,7 +1,7 @@
 <?php
 /* THIS FILE IS NOT MEANT FOR CUSTOMIZING.
  * PLEASE EDIT THE FOLLOWING TO CHANGE YOUR CONFIG:
- * LIBRETIME_CONF_DIR/airtime.conf
+ * LIBRETIME_CONF_DIR/libretime.conf
  */
 
 require_once __DIR__ . '/constants.php';
@@ -16,10 +16,10 @@ class Config {
                 /* ================================================ storage configuration */
                 "rootDir" => self::$rootDir
         );
-        
-        //In the unit testing environment, LIBRETIME_CONF_DIR will our local airtime.conf in airtime_mvc/application/test/conf:
-        $filename = isset($_SERVER['AIRTIME_CONF']) ? $_SERVER['AIRTIME_CONF'] : LIBRETIME_CONF_DIR . "/airtime.conf";
-        
+
+        //In the unit testing environment, LIBRETIME_CONF_DIR will our local libretime.conf in airtime_mvc/application/test/conf:
+        $filename = isset($_SERVER['AIRTIME_CONF']) ? $_SERVER['AIRTIME_CONF'] : LIBRETIME_CONF_DIR . "/libretime.conf";
+
         $values = parse_ini_file($filename, true);
 
         // Name of the web server user

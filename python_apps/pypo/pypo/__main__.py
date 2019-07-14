@@ -174,7 +174,7 @@ configure_locale()
 
 # loading config file
 try:
-    config = ConfigObj("/etc/airtime/airtime.conf")
+    config = ConfigObj("/etc/libretime/libretime.conf")
 except Exception as e:
     logger.error("Error loading config file: %s", e)
     sys.exit(1)

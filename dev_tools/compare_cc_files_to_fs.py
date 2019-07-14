@@ -16,7 +16,7 @@ similar code when it starts up (but then makes changes if something is different
 
 
 class AirtimeMediaMonitorBootstrap():
-    
+
     """AirtimeMediaMonitorBootstrap constructor
 
     Keyword Arguments:
@@ -25,22 +25,13 @@ class AirtimeMediaMonitorBootstrap():
     api_clients -- reference of api_clients to communicate with airtime-server
     """
     def __init__(self):
-        config = ConfigObj('/etc/airtime/airtime.conf')
+        config = ConfigObj('/etc/libretime/libretime.conf')
         self.api_client = apc.api_client_factory(config)
 
-        """        
-        try:
-            logging.config.fileConfig("logging.cfg")
-        except Exception, e:
-            print 'Error configuring logging: ', e
-            sys.exit(1)
-        """
-        
         self.logger = logging.getLogger()
         self.logger.info("Adding %s on watch list...", "xxx")
-        
         self.scan()
-        
+
     """On bootup we want to scan all directories and look for files that
     weren't there or files that changed before media-monitor process
     went offline.

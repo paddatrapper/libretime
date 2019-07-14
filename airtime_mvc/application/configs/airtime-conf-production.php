@@ -4,7 +4,7 @@
 
 /* The original name of this file is airtime-conf.php but since we need to make custom changes
  * to it I've renamed it so that our changes aren't removed everytime we regenerate a database schema.
- * our custom changes requires the database parameters to be loaded from /etc/airtime/airtime.conf so
+ * our custom changes requires the database parameters to be loaded from /etc/libretime/libretime.conf so
  * that the user can customize these.
  */
 

@@ -2,7 +2,7 @@ import os
 from configobj import ConfigObj
 from kombu import Exchange, Queue
 
-# Get the broker string from airtime.conf
+# Get the broker string from libretime.conf
 RMQ_CONFIG_SECTION = "rabbitmq"
 
 

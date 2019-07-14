@@ -17,7 +17,7 @@ post_file() {
     file_path="${stripped_file_path}"
     filename="${file_path##*/}"
 	
-    airtime_conf_path=/etc/airtime/airtime.conf
+    airtime_conf_path=/etc/libretime/libretime.conf
 	
 
     #instance_path will look like 1/1384, for example

@@ -23,7 +23,7 @@ class CeleryManager {
     /**
      * Connect to the Celery daemon via amqp
      *
-     * @param $config   array  the airtime configuration array
+     * @param $config   array  the libretime configuration array
      * @param $exchange string the amqp exchange name
      * @param $queue    string the amqp queue name
      *

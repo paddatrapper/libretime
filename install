@@ -733,10 +733,16 @@ fi
 
 # Run composer (install PHP dependencies) and create a VERSION file
 loudCmd "./build.sh"
-if [ -f /etc/airtime/airtime.conf ]; then
+if [-d /etc/airtime ]; then
+    # Move old airtime install config to libretime directory
+    mv /etc/airtime /etc/libretime
+    mv /etc/libretime/airtime.conf /etc/libretime/libretime.conf
+fi
+
+if [ -f /etc/libretime/libretime.conf ]; then
     # TODO use VERSION or some other way to check for updates and handle
     # media-monitor case on it's own
-    OLD_CONF=$(grep "[media-monitor]" /etc/airtime/airtime.conf)
+    OLD_CONF=$(grep "[media-monitor]" /etc/libretime/libretime.conf)
     
     if [ -n "${OLD_CONF}" ]; then
         upgrade="t"
@@ -750,8 +756,8 @@ if [ -f /etc/airtime/airtime.conf ]; then
         systemInitCommand disable airtime-media-monitor
         verbose "...Done"
 
-        echo "Looks like you have an old version of Airtime. Your current /etc/airtime/airtime.conf \
-will be moved to /etc/airtime/airtime.conf.tmp"
+        echo "Looks like you have an old version of Airtime. Your current /etc/libretime/libretime.conf \
+will be moved to /etc/libretime/libretime.conf.tmp"
         # If we don't remove the existing python files in /usr/lib and the 
         # /etc/init.d startup scripts, services won't work properly
         if [ -d /usr/lib/airtime/ ]; then
@@ -773,7 +779,7 @@ will be moved to /etc/airtime/airtime.conf.tmp"
             rm -rf /usr/share/airtime
         fi
         
-        mv /etc/airtime/airtime.conf /etc/airtime/airtime.conf.tmp
+        mv /etc/libretime/libretime.conf /etc/libretime/libretime.conf.tmp
         set -e
     fi
 fi

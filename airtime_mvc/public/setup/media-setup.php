@@ -25,7 +25,7 @@ require_once(dirname(dirname( __DIR__)) . "/application/models/airtime/CcMusicDi
 class MediaSetup extends Setup {
 
     const MEDIA_FOLDER = "mediaFolder";
-    const LIBRETIME_CONF_FILE_NAME = "airtime.conf";
+    const LIBRETIME_CONF_FILE_NAME = "libretime.conf";
 
     static $path;
     static $message = null;
@@ -59,17 +59,17 @@ class MediaSetup extends Setup {
             self::$errors[] = self::MEDIA_FOLDER;
         }
         
-        // Finalize and move airtime.conf.temp
+        // Finalize and move libretime.conf.temp
         if (file_exists("/etc/airtime/")) {
             if (!$this->moveAirtimeConfig()) {
-                self::$message = "Error moving airtime.conf or deleting /tmp/airtime.conf.temp!";
+                self::$message = "Error moving libretime.conf or deleting /tmp/libretime.conf.temp!";
                 self::$errors[] = "ERR";
             }
 
             /* 
              * If we're upgrading from an old Airtime instance (pre-2.5.2) we rename their old 
-             * airtime.conf to airtime.conf.tmp during the setup process. Now that we're done,
-             * we can rename it to airtime.conf.bak to avoid confusion.
+             * libretime.conf to libretime.conf.tmp during the setup process. Now that we're done,
+             * we can rename it to libretime.conf.bak to avoid confusion.
              */
             $fileName = LIBRETIME_CONF_DIR . '/' . self::LIBRETIME_CONF_FILE_NAME;
             $tmpFile = $fileName . '.tmp';
@@ -78,7 +78,7 @@ class MediaSetup extends Setup {
                 rename($tmpFile, $bakFile);
             }
         } else {
-            self::$message = "Failed to move airtime.conf; /etc/airtime doesn't exist!";
+            self::$message = "Failed to move libretime.conf; /etc/airtime doesn't exist!";
             self::$errors[] = "ERR";
         }
         
@@ -89,7 +89,7 @@ class MediaSetup extends Setup {
     }
 
     /**
-     * Moves /tmp/airtime.conf.temp to /etc/airtime.conf and then removes it to complete setup
+     * Moves /tmp/libretime.conf.temp to /etc/libretime.conf and then removes it to complete setup
      * @return boolean false if either of the copy or removal operations fail
      */
     function moveAirtimeConfig() {

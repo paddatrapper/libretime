@@ -32,9 +32,9 @@ EOF
 }
 
 removeRabbitmqAirtimeSettings() {
-    if [ -f /etc/airtime/airtime.conf ]; then
-        RMQ_VHOST=$(awk -F ' = ' '{if (! ($0 ~ /^;/) && $0 ~ /^vhost/ ) print $2}' /etc/airtime/airtime.conf)
-        RMQ_USER=$(awk -F ' = ' '{if (! ($0 ~ /^;/) && $0 ~ /^user/ ) print $2}' /etc/airtime/airtime.conf)
+    if [ -f /etc/libretime/libretime.conf ]; then
+        RMQ_VHOST=$(awk -F ' = ' '{if (! ($0 ~ /^;/) && $0 ~ /^vhost/ ) print $2}' /etc/libretime/libretime.conf)
+        RMQ_USER=$(awk -F ' = ' '{if (! ($0 ~ /^;/) && $0 ~ /^user/ ) print $2}' /etc/libretime/libretime.conf)
     else
         RMQ_VHOST=/airtime
         RMQ_USER=airtime

@@ -10,7 +10,7 @@ if [ -z "$1" ]
 fi
 
 
-airtime_conf_path=/etc/airtime/airtime.conf
+airtime_conf_path=/etc/libretime/libretime.conf
 sound_folder=/srv/airtime/stor/
 
 psdl_db=$(grep dbname ${airtime_conf_path} | awk '{print $3;}' )
@@ -37,8 +37,8 @@ echo 'stor: Complete'
 
 ## Backup of libretime config
 
-mkdir $backup_folder'airtime_config/'
+mkdir $backup_folder'libretime_config/'
 
 echo 'config: Copying config...'
-rsync -r -a --info=progress2 /etc/airtime/ $backup_folder'airtime_config/'
+rsync -r -a --info=progress2 /etc/airtime/ $backup_folder'libretime_config/'
 echo 'config: Complete'

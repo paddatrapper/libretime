@@ -50,8 +50,8 @@ LibreTime needs direct access to LDAP so it can fetch additional information. It
 a [system account](https://www.freeipa.org/page/HowTo/LDAP#System_Accounts) that you need to
 set up beforehand.
 
-You can configure everything pertaining to how LibreTime accesses LDAP in 
-`/etc/airtime/airtime.conf`. The default file has the following values you need to change.
+You can configure everything pertaining to how LibreTime accesses LDAP in
+`/etc/libretime/libretime.conf`. The default file has the following values you need to change.
 
 ```ini
 # 
@@ -92,7 +92,7 @@ groupmap_superadmin = 'cn=superadmin,cn=groups,cn=accounts,dc=int,dc=example,dc=
 
 ## Enable FreeIPA auth
 
-After everything is set up properly you can enable FreeIPA auth in `airtime.conf`:
+After everything is set up properly you can enable FreeIPA auth in `libretime.conf`:
 
 ```
 [general]

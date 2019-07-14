@@ -1,5 +1,5 @@
 <?php
-    $tempConfigPath = "/etc/airtime/airtime.conf.tmp";
+    $tempConfigPath = "/etc/libretime/libretime.conf.tmp";
     if (file_exists($tempConfigPath)) {
         $airtimeConfig = parse_ini_file($tempConfigPath, true);
         $db = $airtimeConfig["database"];

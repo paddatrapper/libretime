@@ -6,7 +6,7 @@ import requests
 from urlparse import urlparse
 import sys
 
-CONFIG_PATH='/etc/airtime/airtime.conf'
+CONFIG_PATH='/etc/libretime/libretime.conf'
 GENERAL_CONFIG_SECTION = "general"
 
 def read_config_file(config_path):

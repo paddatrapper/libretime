@@ -10,14 +10,14 @@
  */
 class GeneralSetup extends Setup {
 
-    // airtime.conf section header
+    // libretime.conf section header
     protected static $_section = "[general]";
 
     // Constant form field names for passing errors back to the front-end
     const GENERAL_PORT = "generalPort",
         GENERAL_HOST = "generalHost";
 
-    // Array of key->value pairs for airtime.conf
+    // Array of key->value pairs for libretime.conf
     protected static $_properties;
 
     // Message and error fields to return to the front-end

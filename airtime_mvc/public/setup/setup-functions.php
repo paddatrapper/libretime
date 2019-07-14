@@ -1,6 +1,6 @@
 <?php
 define("BUILD_PATH", dirname(dirname(__DIR__)) . "/build/");
-define("AIRTIME_CONF_TEMP_PATH", "/etc/airtime/airtime.conf.temp");
+define("AIRTIME_CONF_TEMP_PATH", "/etc/libretime/libretime.conf.temp");
 define("RMQ_INI_TEMP_PATH", "/tmp/rabbitmq.ini.tmp");
 
 // load autoloader since this files is an entry path see 
@@ -20,7 +20,7 @@ abstract class Setup {
     protected static $_section;
 
     /**
-     * Array of key->value pairs for airtime.conf
+     * Array of key->value pairs for libretime.conf
      *
      * @var array
      */
@@ -31,11 +31,11 @@ abstract class Setup {
     abstract function runSetup();
 
     /**
-     * Write new property values to a given section in airtime.conf.temp
+     * Write new property values to a given section in libretime.conf.temp
      */
     protected function writeToTemp() {
         if (!file_exists(AIRTIME_CONF_TEMP_PATH)) {
-            copy(BUILD_PATH . "airtime.example.conf", AIRTIME_CONF_TEMP_PATH);
+            copy(BUILD_PATH . "libretime.example.conf", AIRTIME_CONF_TEMP_PATH);
         }
         //Logging::info(AIRTIME_CONF_TEMP_PATH);
         $this->_write(AIRTIME_CONF_TEMP_PATH);
@@ -55,7 +55,7 @@ abstract class Setup {
             }
 
             if (substr(trim($line), 0, 1) == "#") {
-                /* Workaround to strip comments from airtime.conf.
+                /* Workaround to strip comments from libretime.conf.
                  * We need to do this because python's ConfigObj and PHP
                  * have different (and equally strict) rules about comment
                  * characters in configuration files.
@@ -121,8 +121,8 @@ require_once ('rabbitmq-setup.php');
 require_once ('general-setup.php');
 require_once ('media-setup.php');
 
-// If airtime.conf exists, we shouldn't be here
-if (!file_exists("/etc/airtime/airtime.conf")) {
+// If libretime.conf exists, we shouldn't be here
+if (!file_exists("/etc/libretime/libretime.conf")) {
     if (isset($_GET["obj"]) && $objType = $_GET["obj"]) {
         $obj = new $objType($_POST);
         if ($obj instanceof Setup) {

@@ -73,7 +73,7 @@ logger = rootLogger
 
 # loading config file
 try:
-    config = ConfigObj('/etc/airtime/airtime.conf')
+    config = ConfigObj('/etc/libretime/libretime.conf')
 
 except Exception, e:
     logger.error('Error loading config file: %s', e)

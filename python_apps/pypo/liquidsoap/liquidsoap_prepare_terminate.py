@@ -3,7 +3,7 @@ import telnetlib
 import sys
 
 try:
-    config = ConfigObj('/etc/airtime/airtime.conf')
+    config = ConfigObj('/etc/libretime/libretime.conf')
     LS_HOST = config['pypo']['ls_host']
     LS_PORT = config['pypo']['ls_port']
 

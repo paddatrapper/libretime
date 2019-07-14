@@ -72,7 +72,7 @@ class Billing
         //$currentProduct = Billing::getClientCurrentAirtimeProduct();
         //return $currentProduct["id"];
         //XXX: Major hack attack. Since this function gets called often, rather than querying WHMCS
-        //     we're just going to extract it from airtime.conf since it's the same as the rabbitmq username.
+        //     we're just going to extract it from libretime.conf since it's the same as the rabbitmq username.
         $CC_CONFIG = Config::getConfig();
         $instanceId = $CC_CONFIG['rabbitmq']['user'];
         if (!is_numeric($instanceId)) {

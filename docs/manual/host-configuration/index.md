@@ -3,9 +3,9 @@ The streaming host configuration for Libretime is shown in the file */etc/airtim
 Database and RabbitMQ hosts
 ---------------------------
 
-Optionally, you may wish to edit the file */etc/airtime/airtime.conf* to set the PostgreSQL database host, and the username and password to connect to the database with:
+Optionally, you may wish to edit the file */etc/libretime/libretime.conf* to set the PostgreSQL database host, and the username and password to connect to the database with:
 
-    sudo nano /etc/airtime/airtime.conf
+    sudo nano /etc/libretime/libretime.conf
 
 You can also set options for RabbitMQ messaging, the Libretime server and SoundCloud uploads in this file, although you should not normally need to adjust the defaults unless you are running a large Libretime system distributed across multiple servers. To run the Libretime server in demo mode, which changes the greeting on the login page and prevents user accounts from being created or modified, set the value of *demo* to 1.
 
@@ -58,7 +58,7 @@ to make sure all of Libretime's database configuration files are updated. This c
 API client configuration
 ------------------------
 
-If you have changed the *base\_url*, *base\_port* or *base\_dir* setting in */etc/airtime/airtime.conf* from the defaults, you will probably also have to update the *Hostname* settings in the file */etc/airtime/api\_client.cfg* accordingly.**
+If you have changed the *base\_url*, *base\_port* or *base\_dir* setting in */etc/libretime/libretime.conf* from the defaults, you will probably also have to update the *Hostname* settings in the file */etc/airtime/api\_client.cfg* accordingly.**
 
     bin_dir = /usr/lib/airtime/api_clients
     api_key = 'XXXXXXXXXXXXXXXXXXXX'
@@ -71,7 +71,7 @@ If you have changed the *base\_url*, *base\_port* or *base\_dir* setting in */et
 Playout and recorder settings
 -----------------------------
 
-Settings for pypo, the playout and recording engine used by Libretime, are found in the file */etc/airtime/airtime.conf*. After making changes to this file, you will have to issue the command:
+Settings for pypo, the playout and recording engine used by Libretime, are found in the file */etc/libretime/libretime.conf*. After making changes to this file, you will have to issue the command:
 
     sudo /etc/init.d/airtime-playout restart
 

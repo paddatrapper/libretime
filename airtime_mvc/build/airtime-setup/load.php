@@ -92,7 +92,7 @@ function configureDatabase() {
  * @return true if the RabbitMQ connection can be established
  */
 function checkRMQConnection() {
-    // Check for airtime.conf in /etc/airtime/ first, then check in the build directory,
+    // Check for libretime.conf in /etc/libretime/ first, then check in the build directory,
     if (file_exists(AIRTIME_CONFIG_STOR . AIRTIME_CONFIG)) {
         $ini = parse_ini_file(AIRTIME_CONFIG_STOR . AIRTIME_CONFIG, true);
     } else {

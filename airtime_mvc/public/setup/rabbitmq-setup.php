@@ -10,10 +10,10 @@
  */
 class RabbitMQSetup extends Setup {
 
-    // airtime.conf section header
+    // libretime.conf section header
     protected static $_section = "[rabbitmq]";
 
-    // Array of key->value pairs for airtime.conf
+    // Array of key->value pairs for libretime.conf
     protected static $_properties;
 
     // Constant form field names for passing errors back to the front-end

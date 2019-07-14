@@ -31,9 +31,9 @@ define('CONFIG_PATH', APPLICATION_PATH . 'configs/');
 define('VENDOR_PATH', ROOT_PATH . '../vendor/');
 define('REST_MODULE_CONTROLLER_PATH', APPLICATION_PATH . 'modules/rest/controllers/');
 
-define("AIRTIME_CONFIG_STOR", "/etc/airtime/");
+define("AIRTIME_CONFIG_STOR", "/etc/libretime/");
 
-define('AIRTIME_CONFIG', 'airtime.conf');
+define('AIRTIME_CONFIG', 'libretime.conf');
 
 //Rest Module Controllers - for custom Rest_RouteController.php
 set_include_path(REST_MODULE_CONTROLLER_PATH . PATH_SEPARATOR . get_include_path());
@@ -69,7 +69,7 @@ if (file_exists($filename)) {
 }
 // Otherwise, we'll need to run our configuration setup
 else {
-    // Sometimes we can get into a weird NFS state where a station's airtime.conf has
+    // Sometimes we can get into a weird NFS state where a station's libretime.conf has
     // been neg-cached - redirect to a 404 instead until the NFS cache is updated
     if (strpos($_SERVER['SERVER_NAME'], "airtime.pro") !== false) {
         header($_SERVER['SERVER_PROTOCOL'] . ' 404 Page Not Found', true, 404);

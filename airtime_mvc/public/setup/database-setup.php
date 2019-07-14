@@ -8,7 +8,7 @@
  */
 class DatabaseSetup extends Setup {
     
-    // airtime.conf section header
+    // libretime.conf section header
     protected static $_section = "[database]";
 
     // Constant form field names for passing errors back to the front-end
@@ -17,7 +17,7 @@ class DatabaseSetup extends Setup {
         DB_NAME = "dbName",
         DB_HOST = "dbHost";
 
-    // Array of key->value pairs for airtime.conf
+    // Array of key->value pairs for libretime.conf
     protected static $_properties;
 
     /**

@@ -64,7 +64,7 @@ but the RabbitMQ server is running normally, this error might be due to a change
 
     rabbit@airtime
 
-where the hostname is *airtime.example.com*. If the hostname has changed, it may be necessary to reconfigure RabbitMQ manually, as follows:
+where the hostname is *libretime.example.com*. If the hostname has changed, it may be necessary to reconfigure RabbitMQ manually, as follows:
 
 1. Delete the files in */var/lib/rabbitmq/mnesia/*
 
@@ -74,7 +74,7 @@ where the hostname is *airtime.example.com*. If the hostname has changed, it may
 
     sudo invoke-rc.d rabbitmq-server restart
 
-3. Enter the following commands to set up authentication and grant permissions. The *rabbitmqctl add\_user* command requires the RabbitMQ password from the /etc/airtime/airtime.conf file as an argument. The *rabbitmqctl set\_permissions* command should be entered on one line, with the list of Airtime services repeated three times:
+3. Enter the following commands to set up authentication and grant permissions. The *rabbitmqctl add\_user* command requires the RabbitMQ password from the /etc/libretime/libretime.conf file as an argument. The *rabbitmqctl set\_permissions* command should be entered on one line, with the list of Airtime services repeated three times:
 
     rabbitmqctl add_vhost /airtime
     rabbitmqctl add_user airtime XXXXXXXXXXXXXXXXXXXX 

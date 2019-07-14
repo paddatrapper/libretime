@@ -34,7 +34,7 @@ def api_client(logger):
 
 # loading config file
 try:
-    config = ConfigObj('/etc/airtime/airtime.conf')
+    config = ConfigObj('/etc/libretime/libretime.conf')
 except Exception, e:
     print ('Error loading config file: %s', e)
     sys.exit()

@@ -12,11 +12,11 @@ sudo service airtime-liquidsoap start
 sudo service airtime_analyzer start
 sudo service airtime-celery start</pre>
     <p>
-        Click "Done!" to bring up the Airtime configuration checklist; if your configuration is all green, 
+        Click "Done!" to bring up the Airtime configuration checklist; if your configuration is all green,
         you're ready to get started with your personal Airtime station!
     </p>
     <p>
-        If you need to re-run the web installer, just remove <code>/etc/airtime/airtime.conf</code>.
+        If you need to re-run the web installer, just remove <code>/etc/libretime/libretime.conf</code>.
     </p>
     <div>
         <input type="submit" formtarget="finishSettingsForm" class="btn btn-primary btn-next" value="Done!"/>
