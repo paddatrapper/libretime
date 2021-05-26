@@ -5,6 +5,10 @@ Vagrant.configure("2") do |config|
 
   # libretime web interface
   config.vm.network "forwarded_port", guest: 8080, host:8080
+  # Vue UI
+  config.vm.network "forwarded_port", guest: 8082, host:8082
+# Vue Storybook
+  config.vm.network "forwarded_port", guest: 6006, host:6006
   # icecast2
   config.vm.network "forwarded_port", guest: 8000, host:8000
   # liquidsoap input harbors for instreaming (ie. /master)
@@ -22,8 +26,8 @@ Vagrant.configure("2") do |config|
   config.vm.network "private_network", ip: "192.168.10.100"
 
   config.vm.provider "virtualbox" do |v|
-    # to run without OOMing we need at least 1GB of RAM
-    v.memory = 1024
+    # to run without OOMing we need at least 2GB of RAM
+    v.memory = 2048
 
     # enable audio drivers on VM settings
     # pinched from https://github.com/GeoffreyPlitt/vagrant-audio
