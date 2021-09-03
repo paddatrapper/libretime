@@ -20,7 +20,7 @@ setup(
     packages=["airtime-celery"],
     install_requires=[
         "celery==4.4.7",
-        "kombu==4.6.10",
+        "kombu==5.1.0",
         "configobj",
     ],
     zip_safe=False,
