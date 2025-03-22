@@ -3,15 +3,20 @@ import { createI18n } from "vue-i18n";
 import en_US from "@/locales/en-US.json";
 
 import type { I18n, I18nOptions, Locale } from "vue-i18n";
+import type { WritableComputedRef } from "vue";
 
 export const SUPPORTED_LOCALES = ["en-US"];
 
 export function getLocale(i18n: I18n): string {
-  return i18n.global.locale.value;
+  const locale = i18n.global.locale as WritableComputedRef<string, string>;
+  return locale.value;
 }
 
 export function setLocale(i18n: I18n, locale: Locale): void {
-  i18n.global.locale.value = locale;
+  // I think this should work. We currently don't have any
+  // switching in the UI, so I have not yet tested this.
+  const currentlocale = i18n.global.locale as WritableComputedRef<string, string>;
+  currentlocale.value = locale;
 }
 
 const defaultOptions: I18nOptions = {

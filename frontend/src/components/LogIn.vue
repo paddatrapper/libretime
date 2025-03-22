@@ -20,7 +20,6 @@
         <v-btn
           block
           color="primary"
-          @click="login"
         >
           {{ $t("components.login.title") }}
         </v-btn>
@@ -30,11 +29,8 @@
 </template>
 
 <script setup lang="ts">
-</script>
+import { ref } from 'vue'
 
-<script lang="ts">
-export default {
-  name: "LogIn",
-  props: {},
-}
+const email = ref("")
+const password = ref("")
 </script>
