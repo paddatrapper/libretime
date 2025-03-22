@@ -353,6 +353,7 @@ check_distribution()  {
   # shellcheck disable=SC2034
   case "$ID-$VERSION_ID" in
     ubuntu-20.04) is_ubuntu=true && distro="focal" ;;
+    ubuntu-20.04) is_ubuntu=true && distro="jammy" ;;
     debian-11)    is_debian=true && distro="bullseye" ;;
     *)
       error "could not determine supported distribution '$ID-$VERSION_ID'
@@ -389,7 +390,16 @@ prepare_packages_install() {
 
   if $is_ubuntu; then
     install_packages software-properties-common
+  fi
+
+  if $distro =~ focal; then
     add-apt-repository -y ppa:libretime/libretime
+
+    DEBIAN_FRONTEND=noninteractive apt-get -q update
+  fi
+
+  if $distro =~ jammy; then
+    add-apt-repository -y ppa:ondrej/php
 
     DEBIAN_FRONTEND=noninteractive apt-get -q update
   fi
