@@ -54,7 +54,7 @@ jobs:
         run: yarn install --frozen-lockfile
         working-directory: frontend
       - name: Run tests with Cypress
-        run: yarn cypress:run
+        run: yarn cypress run
         working-directory: frontend
 
   test-build:
